@@ -7,6 +7,7 @@ This dataset include 2594 image-mask pair for segmenting lesion on skin.
 <p align="center">
 <img src="https://github.com/duylebkHCM/SkinLesionSegmentation/blob/main/assets/download.png" alt="isic" width=800 />
 </p>
+
 ## UNET MODEL
 Unet model contain 2 part: Encoder and Decoder. 
 * Encoder: Use to extract features from the image, from low level features to high level features. It include 5 block, each block is a group of convolution, batchnorm and max-pooling layer
@@ -14,15 +15,18 @@ Unet model contain 2 part: Encoder and Decoder.
 <p align="center">
 <img src="https://github.com/duylebkHCM/SkinLesionSegmentation/blob/main/assets/unet.png" alt="unet" width=800 />
 </p>
+
 ## RESULT
 I train the model for 60 epoch using Adam optimizer, combine loss between dice loss and binary cross entropy loss. The model achieves best dice coefficience of 81.49 
 <p align="center">
 <img src="https://github.com/duylebkHCM/SkinLesionSegmentation/blob/main/assets/plot.png" alt="loss" width=800 />
 </p>
+
 ### Some predicted images:
 <p align="center">
 <img src="https://github.com/duylebkHCM/SkinLesionSegmentation/blob/main/assets/predict.png" alt="pred" width=800 />
 </p>
+
 ## WEB APP
 I serve an Unet model for skin lesion segmentation using `FastAPI` for the backend service and `streamlit` for the frontend service. `docker-compose` orchestrates the two services and allows communication between them.
 
